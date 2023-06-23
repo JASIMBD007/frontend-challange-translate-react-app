@@ -19,6 +19,9 @@ const TranslationForm = () => {
     }, [translationHistory]);
 
     const handleTranslate = () => {
+        if (originalText.trim() === '') {
+            return; // Do not translate empty text
+        }
         // Dummy translation, copy the original text to translated text
         setTranslatedText(originalText);
 
