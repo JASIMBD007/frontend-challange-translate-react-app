@@ -36,8 +36,9 @@ const TranslationForm = () => {
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <div className=" mx-auto p-4">
             <div className="mb-4">
+                <h4>Original Text</h4>
                 <textarea
                     className="w-full h-40 p-2 border border-gray-300 rounded"
                     placeholder="Original text"
@@ -54,6 +55,7 @@ const TranslationForm = () => {
                 </button>
             </div>
             <div className="mb-4">
+                <h4>Easy Language</h4>
                 <textarea
                     className="w-full h-40 p-2 border border-gray-300 rounded"
                     placeholder="Translated text"
@@ -61,8 +63,9 @@ const TranslationForm = () => {
                     readOnly
                 ></textarea>
             </div>
-            <div>
-                <h2 className="text-lg font-bold mb-2">Translation History</h2>
+            <h2 className="text-lg font-bold my-4 text-center">Translation History</h2>
+            <div className="grid grid-cols-3 gap-4">
+
                 {translationHistory.map((translation, index) => (
                     <div
                         key={index}
@@ -78,6 +81,7 @@ const TranslationForm = () => {
                     </div>
                 ))}
             </div>
+
         </div>
     );
 }
