@@ -18,6 +18,13 @@ const TranslationForm = () => {
         localStorage.setItem('translationHistory', JSON.stringify(translationHistory));
     }, [translationHistory]);
 
+    useEffect(() => {
+        return () => {
+            // Cleanup function to remove translation history from local storage
+            localStorage.removeItem('translationHistory');
+        };
+    }, []);
+
     const handleTranslate = () => {
         if (originalText.trim() === '') {
             return; // Do not translate empty text
