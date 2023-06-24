@@ -5,6 +5,7 @@ const TranslationForm = () => {
     const [translatedText, setTranslatedText] = useState('');
     const [translationHistory, setTranslationHistory] = useState([]);
 
+
     useEffect(() => {
         // Load previous translations from local storage
         const savedTranslations = localStorage.getItem('translationHistory');
@@ -48,7 +49,7 @@ const TranslationForm = () => {
             ...prevHistory,
         ]);
     };
-
+    //Edit the translated text
     const handleEditTranslation = (index) => {
         const editedTranslation = translationHistory[index];
         setOriginalText(editedTranslation.originalText);
@@ -56,8 +57,8 @@ const TranslationForm = () => {
     };
 
     return (
-        <div className="mx-auto p-4 bg-gray-50">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-center mb-4">
+        <div className="mx-auto p-4 bg-gray-100">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-center mb-8">
                 <div className="md:w-1/2 md:mr-4 mb-4 md:mb-0">
                     <h4>Original Text</h4>
                     <textarea
