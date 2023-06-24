@@ -13,7 +13,9 @@ function App () {
         <Routes>
 
           <Route exact path="/about" element={<About />} />
+          <Route path="/" element={<TranslationForm />} />
           <Route path="/newtranslation" element={<TranslationForm />} />
+
         </Routes>
       </Router>
       <Footer />
