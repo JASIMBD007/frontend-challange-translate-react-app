@@ -1,6 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigation = [
+        { name: 'New Translation', href: '/newtranslation', current: false },
+        { name: 'About', href: '/about', current: false }
+
+    ];
+
     return (
         <nav className="bg-gray-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,18 +18,15 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="flex">
-                        <a
-                            href="#"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        >
-                            New Translation
-                        </a>
-                        <a
-                            href="#"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        >
-                            About
-                        </a>
+                        {navigation.map((item) => (
+                            <Link
+                                key={item.name}
+                                to={item.href}
+                                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            >
+                                {item.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -30,5 +34,4 @@ const Navbar = () => {
     );
 };
 
-
-export default Navbar
+export default Navbar;
