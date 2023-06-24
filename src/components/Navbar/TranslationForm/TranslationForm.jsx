@@ -8,6 +8,7 @@ const TranslationForm = () => {
     useEffect(() => {
         // Load previous translations from local storage
         const savedTranslations = localStorage.getItem('translationHistory');
+
         if (savedTranslations) {
             setTranslationHistory(JSON.parse(savedTranslations));
         }

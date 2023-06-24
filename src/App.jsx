@@ -8,7 +8,6 @@ function App () {
     <div>
       <Navbar />
       <TranslationForm />
-      <TranslationHistory />
     </div>
   )
 }
