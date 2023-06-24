@@ -1,7 +1,6 @@
-import TranslationHistory from './TranslationHistory/TranslationHistory'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
-import TranslationForm from './components/Navbar/TranslationForm/TranslationForm'
+import TranslationForm from './components/TranslationForm/TranslationForm'
 
 function App () {
 

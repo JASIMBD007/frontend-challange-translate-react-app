@@ -56,17 +56,28 @@ const TranslationForm = () => {
     };
 
     return (
-        <div className=" mx-auto p-4">
-            <div className="mb-4">
-                <h4>Original Text</h4>
-                <textarea
-                    className="w-full h-40 p-2 border border-gray-300 rounded"
-                    placeholder="Original text"
-                    value={originalText}
-                    onChange={(e) => setOriginalText(e.target.value)}
-                ></textarea>
+        <div className="mx-auto p-4 bg-gray-50">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-center mb-4">
+                <div className="md:w-1/2 md:mr-4 mb-4 md:mb-0">
+                    <h4>Original Text</h4>
+                    <textarea
+                        className="w-full h-40 p-2 border border-gray-300 rounded"
+                        placeholder="Original text"
+                        value={originalText}
+                        onChange={(e) => setOriginalText(e.target.value)}
+                    ></textarea>
+                </div>
+                <div className="md:w-1/2 md:ml-4">
+                    <h4>Easy Language</h4>
+                    <textarea
+                        className="w-full h-40 p-2 border border-gray-300 rounded"
+                        placeholder="Translated text"
+                        value={translatedText}
+                        readOnly
+                    ></textarea>
+                </div>
             </div>
-            <div className="mb-4">
+            <div className="flex justify-center mb-4">
                 <button
                     className="px-4 py-2 bg-blue-500 text-white rounded"
                     onClick={handleTranslate}
@@ -74,18 +85,8 @@ const TranslationForm = () => {
                     Translate
                 </button>
             </div>
-            <div className="mb-4">
-                <h4>Easy Language</h4>
-                <textarea
-                    className="w-full h-40 p-2 border border-gray-300 rounded"
-                    placeholder="Translated text"
-                    value={translatedText}
-                    readOnly
-                ></textarea>
-            </div>
-            <h2 className="text-lg font-bold my-4 text-center">Translation History</h2>
+            <h2 className="text-lg font-bold my-8 text-center">Translation History</h2>
             <div className="grid grid-cols-3 gap-4">
-
                 {translationHistory.map((translation, index) => (
                     <div
                         key={index}
@@ -101,9 +102,9 @@ const TranslationForm = () => {
                     </div>
                 ))}
             </div>
-
         </div>
     );
+
 }
 
 export default TranslationForm
