@@ -29,6 +29,15 @@ const TranslationForm = () => {
         if (originalText.trim() === '') {
             return; // Do not translate empty text
         }
+
+        // Check if the translation already exists in the history
+        const translationExists = translationHistory.some(
+            (translation) => translation.originalText === originalText
+        );
+
+        if (translationExists) {
+            return; // Do not add duplicate translations
+        }
         // Dummy translation, copy the original text to translated text
         setTranslatedText(originalText);
 
